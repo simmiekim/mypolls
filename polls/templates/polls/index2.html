@@ -1,0 +1,25 @@
+{% extends "polls/base.html" %}
+
+{% block title %} 설문조사 {% endblock %}
+
+{% block content %}
+    <h1>설문조사</h1>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>질문</th>
+                        <th>날짜/시간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for question in latest_question_list %}
+                    <tr>
+                        <td>{{ question.question_txt}}</td>
+                        <td>{{ question.pub_date }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

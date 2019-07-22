@@ -1,0 +1,10 @@
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        {# <li>{{ question.question_txt }}</li> #}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_txt }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> 선택할 질문 없음 </p>
+{% endif %}
